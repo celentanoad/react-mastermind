@@ -1,0 +1,17 @@
+.GamePage-link-margin {
+    margin-bottom: 10px;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+}
+  
+  
+.App-controls {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+  
