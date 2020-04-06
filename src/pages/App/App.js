@@ -20,7 +20,9 @@ class App extends Component {
   }
 
   genCode() {
-    return new Array(4).fill().map(() => Math.floor(Math.random() * colors.length));
+    let numColors = this.state && colors[this.state.difficulty].length;
+    numColors = numColors || 4;
+    return new Array(4).fill().map(dummy => Math.floor(Math.random() * numColors));
   }
 
   getInitialState() {

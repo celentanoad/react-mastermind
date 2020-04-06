@@ -16,7 +16,7 @@ const SettingsPage = (props) => {
                 className='btn btn-default'
                 disabled={level === props.difficulty}
                 onClick={() => handleDifficultyChange(level)}
-            >Level</button>
+            >{level}</button>
             <div>
                 {props.colorsLookup[level].map(color =>
                     <div style={{backgroundColor: color}}
