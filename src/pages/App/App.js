@@ -27,8 +27,9 @@ class App extends Component {
     return {
       selColorIdx: 0,
       guesses: [this.getNewGuess()],
-      code: this.genCode()
-    }
+      code: this.genCode(),
+      elapsedTime: 0
+    };
   }
 
   getNewGuess() {
@@ -141,6 +142,10 @@ class App extends Component {
     this.setState(this.getInitialState());
   }
 
+  handleTimerUpdate = () => {
+    this.setState((state) => ({elapsedTime: ++ state.elapsedTime}));
+  }
+
   // Lifecycle methods below:
 
   componentDidMount() {
@@ -168,6 +173,8 @@ class App extends Component {
           handleNewGameClick={this.handleNewGameClick}
           handlePegClick={this.handlePegClick}
           handleScoreClick={this.handleScoreClick}
+          elapsedTime={this.state.elapsedTime}
+          handleTimerUpdate={this.handleTimerUpdate}
           />
         } />
         <Route exact path='/settings' render={props =>
